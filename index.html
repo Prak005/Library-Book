@@ -8,17 +8,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="container">
-        <div id="header">Books</div>
-        <div id="book-container">
-            <div id="books">
-                <div id="name">A Study in Scarlet</div>
-                <div id="author">Sir Arthur Conan Doyle</div>
-                <div id="genre">Mystery, Thriller</div>
-                <button id="delete-book">Delete Book</button>
-            </div>
-        </div>
-        <button id="add-book">Add Book</button>
-    </div>
+    <main id="app">
+        <header id="app-header">
+            <h1>My Library</h1>
+            <button id="new-book-btn">New Book</button>
+        </header>
+        <section id="book-list" aria-live="polite">
+
+        </section>
+        <dialog id="book-dialog" aria-labelledby="dialog-title">
+            <form id="book-form" method="dialog">
+                <h2 id="dialog-title">Add New Book</h2>
+                <label>
+                    Title
+                    <input type="text" name="title" required />
+                </label>
+                <label>
+                    Author
+                    <input type="text" name="author" required />
+                </label>
+                <label>
+                    Genre
+                    <input type="text" name="genre" required />
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="read" />
+                    Already Read
+                </label>
+
+                <menu class="dialog-actions">
+                    <button type="submit">Add</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </menu>
+            </form>
+        </dialog>
+    </main>
 </body>
 </html>
